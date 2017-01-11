@@ -1,7 +1,7 @@
 var express=require("express");
 var app=express();
-var getData=require("./routes/getData");
-var issueError=require("./routes/issueError");
+var getData=require("./getData");
+var issueError=require("./issueError");
 
 app.use("/get",getData);
 app.use("/*",issueError);
