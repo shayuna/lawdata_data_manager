@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title upload rule
+        meta(charset="windows-1255")
+        script(type="text/javascript",src="/handleForm.js")
+    body
+        form(id="fileForm",method="post",enctype="multipart/form-data",target="_self")
+            label choose your filename
+            input(type="file",id="fDoc",name="fDoc")
+        input(type="text",id="fNm",name="fNm",placeholder="what's the file name")
+        input(type="button",value="שלח קובץ",onclick="handleForm()")
+        iframe(id="frm",name="frm",style="display:none;")
+        
