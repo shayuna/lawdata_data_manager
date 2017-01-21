@@ -3,7 +3,7 @@ var fs = require('fs');
 var busboy = require('connect-busboy');
 var url = require('url');
 var app=express();
-//...
+
 app.use(busboy()); 
 
 var Storage = require('@google-cloud/storage');
@@ -15,7 +15,9 @@ app.post('/*', function(req, res) {
     var queryData = url.parse(req.url, true).query;
      req.busboy.on('file', function (fieldname, file, filename) {
         var sDoc="";
-        file.on('error', function(err) {})
+        file.on('error', function(err) {
+            console.log ("encountered an error");
+        })
         .on('data', function(chunk) {
             sDoc+=chunk.toString();
             // Server connected and responded with the specified status and headers.
